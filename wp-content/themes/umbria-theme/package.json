@@ -23,5 +23,12 @@
     "@roots/bud-tailwindcss": "6.16.1",
     "@roots/sage": "6.16.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@wordpress/create-block": "^4.28.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat-util": "^0.5.5"
+  }
 }
