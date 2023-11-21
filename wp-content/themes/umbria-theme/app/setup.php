@@ -134,3 +134,10 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+add_action('after_setup_theme', function () {
+    register_nav_menus([
+        'left_navigation' => __('Nawigacja po lewej od logotypu', 'sage'),
+        'right_navigation' => __('Nawigacja po prawej od logotypu', 'sage'),
+    ]);
+});

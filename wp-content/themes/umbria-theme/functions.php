@@ -11,7 +11,6 @@
 |
 */
 
-
 if (! file_exists($composer = __DIR__.'/vendor/autoload.php')) {
     wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'sage'));
 }
@@ -41,11 +40,18 @@ if (! function_exists('\Roots\bootloader')) {
     );
 }
 
-try {
-    \Roots\bootloader()->boot();
-} catch (Throwable $e) {
-    wp_die('You need to install Acorn to use this theme.');
+if (! function_exists('\Roots\bootloader')) {
+    wp_die(
+        __('You need to install Acorn to use this theme.', 'sage'),
+        '',
+        [
+            'link_url' => 'https://roots.io/acorn/docs/installation/',
+            'link_text' => __('Acorn Docs: Installation', 'sage'),
+        ]
+    );
 }
+
+\Roots\bootloader()->boot();
 
 /*
 |--------------------------------------------------------------------------
@@ -68,3 +74,20 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+    
+
+include get_template_directory() . '/app/theme.php';
+
+$my_theme = new \Umbria\Umbria();
+
+function my_theme_setup() {
+    // Dodaj obsługę niestandardowego logo
+    add_theme_support('custom-logo');
+
+    // Dodaj obsługę niestandardowych kolorów
+    add_theme_support('custom-background');
+    add_theme_support('custom-header');
+}
+
+add_action('after_setup_theme', 'my_theme_setup');

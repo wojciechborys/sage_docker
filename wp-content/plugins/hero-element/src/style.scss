@@ -1,0 +1,20 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.hero {
+	height: 70vh;
+	background-size: cover;
+	display: flex;
+	.container {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		h1 {
+			color: white
+		}
+	}
+}

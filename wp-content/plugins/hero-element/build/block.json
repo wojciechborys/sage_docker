@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/hero-element",
+  "version": "0.1.0",
+  "title": "Hero Element",
+  "category": "widgets",
+  "icon": "cover-image",
+  "description": "Blok do wyświetlenia elementu hero.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "hero-element",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "mediaURL": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string",
+      "selector": "h1"
+    },
+    "align": {
+      "type": "string",
+      "default": "none"
+    },
+    "focalPoint": {
+      "type": "object",
+      "default": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  }
+}

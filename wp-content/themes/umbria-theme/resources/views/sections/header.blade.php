@@ -1,11 +1,13 @@
-<header class="banner">
-  <a class="brand" href="{{ home_url('/') }}">
-    {!! $siteName !!}
-  </a>
-
-  @if (has_nav_menu('primary_navigation'))
-    <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-      {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
-    </nav>
-  @endif
+<header>
+    @include('sections.header_upper')
+    <div class="container mx-auto">
+      <nav class="nav__main">
+        <a class="nav__main--logo" href="{{ get_home_url() }}">
+          Casa in Umbria
+        </a>
+        @if (has_nav_menu('left_navigation'))
+            {!! wp_nav_menu(['theme_location' => 'left_navigation', 'menu_class' => 'nav__main--left', 'echo' => false]) !!}
+        @endif         
+      </nav>
+    </div>
 </header>

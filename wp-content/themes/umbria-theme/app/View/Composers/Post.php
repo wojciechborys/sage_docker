@@ -26,6 +26,7 @@ class Post extends Composer
     {
         return [
             'title' => $this->title(),
+            'hello' => $this->hello(),
         ];
     }
 
@@ -65,5 +66,9 @@ class Post extends Composer
         }
 
         return get_the_title();
+    }
+
+    public function hello() {
+        return 'hello';
     }
 }
